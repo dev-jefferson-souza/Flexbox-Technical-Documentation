@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <link rel="stylesheet" href="/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300;400;500;600;700&family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+
+  <title>Flexbox Documentation</title>
+</head>
+<!--User Story #1: I can see a main element with a corresponding id="main-doc", which contains the page's main content (technical documentation).
+
+User Story #2: Within the #main-doc element, I can see several section elements, each with a class of main-section. There should be a minimum of 5.
+
+User Story #3: The first element within each .main-section should be a header element which contains text that describes the topic of that section.
+
+User Story #4: Each section element with the class of main-section should also have an id that corresponds with the text of each header contained within it. Any spaces should be replaced with underscores (e.g. The section that contains the header "JavaScript and Java" should have a corresponding id="JavaScript_and_Java").
+
+User Story #5: The .main-section elements should contain at least 10 p elements total (not each).
+
+User Story #6: The .main-section elements should contain at least 5 code elements total (not each).
+
+User Story #7: The .main-section elements should contain at least 5 li items total (not each).
+
+User Story #8: I can see a nav element with a corresponding id="navbar".
+
+User Story #9: The navbar element should contain one header element which contains text that describes the topic of the technical documentation.
+
+User Story #10: Additionally, the navbar should contain link (a) elements with the class of nav-link. There should be one for every element with the class main-section.
+
+User Story #11: The header element in the navbar must come before any link (a) elements in the navbar.
+
+User Story #12: Each element with the class of nav-link should contain text that corresponds to the header text within each section (e.g. if you have a "Hello world" section/header, your navbar should have an element which contains the text "Hello world").
+
+User Story #13: When I click on a navbar element, the page should navigate to the corresponding section of the main-doc element (e.g. If I click on a nav-link element that contains the text "Hello world", the page navigates to a section element that has that id and contains the corresponding header.
+
+User Story #14: On regular sized devices (laptops, desktops), the element with id="navbar" should be shown on the left side of the screen and should always be visible to the user.
+
+User Story #15: My Technical Documentation page should use at least one media query.-->
+<body>
+  <section id="basic_concepts_of_flexbox">
+    <h1>Basic concepts of flexbox</h1>
+    <p>The Flexible Box Module, usually referred to as <code class="green-markup">flexbox</code>, was deisgned as a one-dimensional layout model, and as a method that could offer space distribution between items in an interface and powerful alignment capabillities. This article gives an outline of the main features of flexbox. <br>
+    When we describe flexbox as being one dimensional we are describing the fact that flexbox deals with layout in one dimension at a time - either as a row or as a column. This can be contrasted with the two-dimensional model of <code class="gray-markup underline">CSS Grid Layout</code>, which controls columns and rows together.</p>
+</section>
+  <main id="main-doc">
+    <section class="main-section" id="the_two_axes_of_flexbox">
+      <h2>The two axes of flexbox</h2>
+      <p>When working with flexbox you need to think in terms of two axes - the mains axis and the cross axis. The main axis is defined by the <code class="gray-markup underline">flex-direction</code> property, and the cross axis runs perpendicular to it. Everything we do with flexbox refers back to these axes, so it is worth understanding how they work from the outset.</p>
+      <section id="axis">
+        <h3>The main axis</h3>
+        <p style="margin-bottom: 0px;">The main axis is defined by <code class="gray-markup underline">flex-direction</code>, whichhas four possible values:</p>
+        <ul>
+          <li class="orange-markup">row</li>
+          <li class="orange-markup">row-reverse</li>
+          <li class="orange-markup">column</li>
+          <li class="orange-markup">column-reverse</li>
+        </ul>
+        <p>Should you choose <code class="gray-markup">row</code> or <code class="gray-markup">row-reverse</code>, your main axis will run along the row in the <strong>inline direction</strong>.</p>
+        <img class="images" src="./assets/basics1.png" alt="">
+        <p>Choose <code class="gray-markup">column</code> or <code class="gray-markup">column-reverse</code> and your main axis will run from the top of the page to the bottom - in the <strong>block direction</strong>.</p>
+        <img class="images" src="./assets/basics2.png" alt="">
+        <h3>The cross axis</h3>
+        <p>The cross axis runs perpendicular to the main axis, therefore if <code class="gray-markup">flex-direction</code> (main axis) is set to <code class="gray-markup">row</code> or <code class="gray-markup">row-reverse</code> the cross axis runs down the columns.</p>
+        <img class="images" src="./assets/basics3.png" alt="">
+        <p>If your main axis is <code class="markup-gray">column</code> or <code class="gray-markup">column-reverse</code> then the cross axis runs along the rows.</p>
+        <img class="images" src="./assets/basics4.png" alt="">
+      </section>
+    </section>
+    <section class="main-section" id="start_and_end_lines">
+      <h2>Start and end lines</h2>
+      <p>Another vital area of understanding is how flexbox makes no assumption about the writing mode of the document. In the past, CSS was heavily weighted towards horizontal and left-to-rigth writing modes. Modern layout methods encompass the range of writing modes and so we no longer assume that a line of text will start at the top left of a document and run towards the right hand side, with new lines appearing one under the other.</p>
+      <p>If the <code class="gray-markup">flex-direction</code> is <code class="gray-markup">row</code> and I am working in English, then the start edge of the main axis will be on the left, the end edge on the right.</p>
+      <img class="images" src="./assets/basics5.png" alt="">
+      <p>If I were to work in Arabic, then the start edge of my main axis would be on the right and the end edge on the left</p>
+      <img class="images" src="./assets/basics6.png" alt="">
+      <p>In both cases the start edge of the cross axis is at the top of the flex container and the edge at the bottom, as both languages have horizontal writing mode.
+        <br>
+      After a while, thinking about start and end rather than left and right becomes natural, and will be usefull to you when dealing with other layouth methods such as CSS Grid Layout which follow the same patterns  
+      </p>
+    </section>
+    <section class="main-section" id="the_flex_container">
+      <h2>The flex container</h2>
+      <p style="margin-bottom: 0px;">An area of a document laid out using flexbox is called a <strong>flex container</strong>. To create a flex container, we set the value of the area's container's <code class="gray-markup blue">display</code> property to <code class="gray-markup">flex</code> or <code class="gray-markup">inline-flex</code>. As soon as we do this the direct children of that container become <strong>flex items</strong>. As with all properties in CSS, some initial values are defined, so when creating a flex container all of the contained flex items will behave in the following way.</p>
+      <ul>
+        <li>Items display in a row (the <code class="gray-markup)">flex-direction</code> property's default is <code class="yellow-markup">row</code>.</li>
+        <li>The items start from the start edge of the main axis.</li>
+        <li>The items do not strecth on the main dimension, but can shrink.</li>
+        <li>The <code class="gray-markup blue underline">flex-basis</code> property is set to <code class="yellow-markup">auto</code>.</li>
+        <li>The <code class="gray-markup blue underline">flex-wrap</code> property is set to <code class="yellow-markup">nowrap</code>.</li>
+      </ul>
+      <p>The result of this is that your items will all line up in a row, using the size of the content as their size in the main axis. If there are more items than can fit in the container, they will not wrap but will instead overflow. If some items are taller than others, all items will stretch along the cross axis to fill its full size.
+        <br> <br>
+      You can see in the live example below how this looks. Try editing the items or adding additional items in order to test the initial behavior of flexbox.  
+      </p>
+      <div class="example-box">
+        <div class="border-box">
+          <div class="box">
+            <div>One</div>
+            <div>Two</div>
+            <div>Three
+              <br>has
+              <br>extra
+              <br>text
+            </div>
+          </div>
+        </div>
+        <h4>CSS</h4>
+        <code class="code-box">.box { <br>
+          <span class="code-margin-1"> display: flex; <br>
+          </span>
+        }</code>
+        <h4>HTML5</h4>
+        <code class="code-box"> &lt;div class="box"&gt;<br>
+          <span class="code-margin-1"> &lt;div&gt; One &lt;/div&gt <br>
+          <span class="code-margin-1"> &lt;div&gt; Tne &lt;/div&gt <br>
+          <span class="code-margin-1"> &lt;div&gt; Three &lt;/div&gt <br>
+          </span>
+          &lt/div&gt
+        </code>
+      </div>  
+    </section>
+    <section class="main-section" id="changing_flex_direction">
+      <h2>Changing-flex-direction</h2>
+      <p>adding the <code class="gray-markup underline blue">flex-direction</code> property to the flex container allow us to change the direction in which our flex items display. Setting <code class="gray-markup">flex-direction: row-reverse</code> will keep the items displaying along the row, however the start and end lines are switched.
+      <br><br>
+      If we change <code class="gray-markup">flex-direction</code> to <code class="gray-markup">column</code> the main axis switches and our items now display in a column. Set <code class="gray-markup">column-reverse</code> and the start and end lines are again switched.
+     <br><br>
+      The live example below has <code class="gray-markup">flex-direction</code> set to <code class="gray-markup">row-reverse</code>. Try the other values - <code class="gray-markup">row</code>, <code class="gray-markup">column</code> and <code class="gray-markup">column-reverse</code> - to see what happens to the content.</p>
+      <div class="example-box">
+        <div class="border-box">
+          <div class="box" id="row-reverse">
+            <div>One</div>
+            <div>Two</div>
+            <div>Three</div>
+          </div>
+        </div>
+        <h4>CSS</h4>
+        <code class="code-box">.box { <br>
+          <span class="code-margin-1"> display: flex; <br>
+          </span>
+          <span class="code-margin-1">flex-direction: row-reverse; <br>
+          </span>
+        }</code>
+        <h4>HTML5</h4>
+        <code class="code-box"> &lt;div class="box"&gt;<br>
+          <span class="code-margin-1"> &lt;div&gt; One &lt;/div&gt <br>
+          <span class="code-margin-1"> &lt;div&gt; Tne &lt;/div&gt <br>
+          <span class="code-margin-1"> &lt;div&gt; Three &lt;/div&gt <br>
+          </span>
+          &lt/div&gt
+        </code>
+      </div>
+    </section>
+    <section class="main-section" id="multi-line_flex_containers_with_flex-wrap">
+      <h2>Multi-line flex containers with flex-wrap</h2>
+      <p>While flexbox is a one dimensional model, it is possible to cause our flex items to wrap onto multiple lines. In doing so, you should consider each line as a new flex container. Any space distribution will happen across that line, without refrence to the lines on either side.</p>
+    </section>
+  </main>
+</body>
+</html
