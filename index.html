@@ -46,14 +46,14 @@ User Story #15: My Technical Documentation page should use at least one media qu
     <h1>Basic concepts of flexbox</h1>
     <p>The Flexible Box Module, usually referred to as <code class="green-markup">flexbox</code>, was deisgned as a one-dimensional layout model, and as a method that could offer space distribution between items in an interface and powerful alignment capabillities. This article gives an outline of the main features of flexbox. <br>
     When we describe flexbox as being one dimensional we are describing the fact that flexbox deals with layout in one dimension at a time - either as a row or as a column. This can be contrasted with the two-dimensional model of <code class="gray-markup underline">CSS Grid Layout</code>, which controls columns and rows together.</p>
-</section>
+  </section>
   <main id="main-doc">
     <section class="main-section" id="the_two_axes_of_flexbox">
       <h2>The two axes of flexbox</h2>
       <p>When working with flexbox you need to think in terms of two axes - the mains axis and the cross axis. The main axis is defined by the <code class="gray-markup underline">flex-direction</code> property, and the cross axis runs perpendicular to it. Everything we do with flexbox refers back to these axes, so it is worth understanding how they work from the outset.</p>
       <section id="axis">
         <h3>The main axis</h3>
-        <p style="margin-bottom: 0px;">The main axis is defined by <code class="gray-markup underline">flex-direction</code>, whichhas four possible values:</p>
+        <p style="margin-bottom: 0px;">The main axis is defined by <code class="gray-markup underline">flex-direction</code>, which has four possible values:</p>
         <ul>
           <li class="orange-markup">row</li>
           <li class="orange-markup">row-reverse</li>
@@ -116,9 +116,9 @@ User Story #15: My Technical Documentation page should use at least one media qu
         }</code>
         <h4>HTML5</h4>
         <code class="code-box"> &lt;div class="box"&gt;<br>
-          <span class="code-margin-1"> &lt;div&gt; One &lt;/div&gt <br>
-          <span class="code-margin-1"> &lt;div&gt; Tne &lt;/div&gt <br>
-          <span class="code-margin-1"> &lt;div&gt; Three &lt;/div&gt <br>
+          <span class="code-margin-1"> &lt;div&gt;One&lt;/div&gt <br>
+          <span class="code-margin-1"> &lt;div&gt;Two&lt;/div&gt <br>
+          <span class="code-margin-1"> &lt;div&gt;Three&lt;/div&gt <br>
           </span>
           &lt/div&gt
         </code>
@@ -126,7 +126,7 @@ User Story #15: My Technical Documentation page should use at least one media qu
     </section>
     <section class="main-section" id="changing_flex_direction">
       <h2>Changing-flex-direction</h2>
-      <p>adding the <code class="gray-markup underline blue">flex-direction</code> property to the flex container allow us to change the direction in which our flex items display. Setting <code class="gray-markup">flex-direction: row-reverse</code> will keep the items displaying along the row, however the start and end lines are switched.
+      <p>Adding the <code class="gray-markup underline blue">flex-direction</code> property to the flex container allow us to change the direction in which our flex items display. Setting <code class="gray-markup">flex-direction: row-reverse</code> will keep the items displaying along the row, however the start and end lines are switched.
       <br><br>
       If we change <code class="gray-markup">flex-direction</code> to <code class="gray-markup">column</code> the main axis switches and our items now display in a column. Set <code class="gray-markup">column-reverse</code> and the start and end lines are again switched.
      <br><br>
@@ -148,9 +148,9 @@ User Story #15: My Technical Documentation page should use at least one media qu
         }</code>
         <h4>HTML5</h4>
         <code class="code-box"> &lt;div class="box"&gt;<br>
-          <span class="code-margin-1"> &lt;div&gt; One &lt;/div&gt <br>
-          <span class="code-margin-1"> &lt;div&gt; Tne &lt;/div&gt <br>
-          <span class="code-margin-1"> &lt;div&gt; Three &lt;/div&gt <br>
+          <span class="code-margin-1"> &lt;div&gt;One&lt;/div&gt <br>
+          <span class="code-margin-1"> &lt;div&gt;Two&lt;/div&gt <br>
+          <span class="code-margin-1"> &lt;div&gt;Three&lt;/div&gt <br>
           </span>
           &lt/div&gt
         </code>
@@ -158,8 +158,144 @@ User Story #15: My Technical Documentation page should use at least one media qu
     </section>
     <section class="main-section" id="multi-line_flex_containers_with_flex-wrap">
       <h2>Multi-line flex containers with flex-wrap</h2>
-      <p>While flexbox is a one dimensional model, it is possible to cause our flex items to wrap onto multiple lines. In doing so, you should consider each line as a new flex container. Any space distribution will happen across that line, without refrence to the lines on either side.</p>
+      <p>While flexbox is a one dimensional model, it is possible to cause our flex items to wrap onto multiple lines. In doing so, you should consider each line as a new flex container. Any space distribution will happen across that line, without refrence to the lines on either side.
+      <br> <br>
+      To cause wrapping behavior add the property <code class="gray-markup underline blue">flex-wrap</code> with value of <code class="gray-markup">wrap</code>. Now, should your items be too large to all display in one line, they will wrap onto another line. The live sample below contains items that have been given a width, the total width of the items being too wide for the flex container. As <code class="gray-markup">flex-wrap</code> is set to <code class="gray-markup">wrap</code>, the items wrap. Set it to <code class="gray-markup">nowrap</code>, whichis also the initial value, and they will instead shrink to fit the container because they are using initial flexbox values that allows items to shrink. Using <code class="gray-markup">nowrap</code> would cause an overflow if the items were not able to shrink, or could not shrink small enough to fit.</p>
+      <div class="example-box">
+        <div class="border-box">
+          <div class="box" id="flex-wrap">
+            <div>One</div>
+            <div>Two</div>
+            <div>Three</div>
+          </div>
+        </div>
+        <h4>CSS</h4>
+        <code class="code-box">.box { <br>
+          <span class="code-margin-1"> display: flex; <br>
+          </span>
+          <span class="code-margin-1">flex-wrap: wrap; <br>
+          </span>
+        }</code>
+        <h4>HTML5</h4>
+        <code class="code-box"> &lt;div class="box"&gt;<br>
+          <span class="code-margin-1"> &lt;div&gt;One&lt;/div&gt <br>
+          <span class="code-margin-1"> &lt;div&gt;Two&lt;/div&gt <br>
+          <span class="code-margin-1"> &lt;div&gt;Three&lt;/div&gt <br>
+          </span>
+          &lt/div&gt
+        </code>
+      </div>
+      <p>Find out more about wrapping flex items in the guide <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flexible_Box_Layout/Mastering_Wrapping_of_Flex_Items">Mastering Wrapping of Flex Items</a>.</p>
     </section>
+    <section class="main-section" id="the_flex-flow_shorthand">
+      <h2>The flex-flow shorthand</h2>
+      <p>You can combine the two properties <code class="gray-markup">flex-direction</code> and <code class="gray-markup">flex-wrap</code> into the <code class="gray-markup underline blue">flex-flow</code> shorthand. The first value specified is <code class="gray-markup">flex-direction</code> and the second value is <code class="gray-markup">flex-wrap</code>.
+      <br><br>
+      In the example below you can check how it works. The first value is the <code class="gray-markup">flex-direction</code> value and the second is the <code class="gray-markup">flex-wrap</code> value.</p>
+      <div class="example-box">
+        <div class="border-box">
+          <div class="box" id="flex-flow">
+            <div>One</div>
+            <div>Two</div>
+            <div>Three</div>
+          </div>
+        </div>
+        <h4>CSS</h4>
+        <code class="code-box">.box { <br>
+          <span class="code-margin-1"> display: flex; <br>
+          </span>
+          <span class="code-margin-1">flex-flow: column wrap; <br>
+          </span>
+        }</code>
+        <h4>HTML5</h4>
+        <code class="code-box"> &lt;div class="box"&gt;<br>
+          <span class="code-margin-1"> &lt;div&gt;One&lt;/div&gt <br>
+          <span class="code-margin-1"> &lt;div&gt;Two&lt;/div&gt <br>
+          <span class="code-margin-1"> &lt;div&gt;Three&lt;/div&gt <br>
+          </span>
+          &lt/div&gt
+        </code>
+      </div>
+    </section>
+    <section class="main-section" id="properties_applied_to_flex_items">
+      <h2>Properties applied to flex items</h2>
+      <p>To have more control over flex items we can target them directly. We do this by way of three properties:</p>
+      <ul>
+        <li class="orange-markup">flex-grow</li>
+        <li class="orange-markup">flex-shrink</li>
+        <li class="orange-markup">flex-basis</li>
+      </ul>
+      <p>We will take a brief look at theses properties in this overview, and you can gain a fuller understanding in the guide <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flexible_Box_Layout/Controlling_Ratios_of_Flex_Items_Along_the_Main_Ax">Controlling Ratios of Flex Items on the Main Axis</a>.
+      <br> <br>
+      Before we can make sense of these properties we need to consider the concept of <strong>available space</strong>. What we are foing when we change the value of these flex properties is to change the way that available space is distibuted amongst our items. This concept of available space is also important when we come to look at aligning items.
+      <br> <br>
+      If we have three 100 pixel-wide items in a container which is 500 pixels wide, then the space we need to lay out our items is 300 pixels. This leaves 200 pixels of available space. If we don't change the initial values then flexbox will put that space after the last item.</p>
+      <img class="images" src="./assets/basics7.png" alt="">
+      <p>If we instead would like the items to grow and fill the space, then we need to have a method of distributing the leftover space between the items. This is what the <code class="gray-markup">flex</code> properties that we apply to the items themselves, will do.</p>
+      <h3>The flex-basis property</h3>
+      <p>The <code class="gray-markup">flex-basis</code> is what defines the size of that item in terms of the space it leaves as available space. The initial value of this property is <code class="orange-markup">auto</code> - in this case the browser looks to see if the items have a size. In the example above, all of the items have a width of 100 pixels and so this is used as the <code class="orange-markup">flex-basis</code>.
+      <br><br>
+      If the items don't have a size then the content's size is used as the flex-basis. This is why when we just declare <code class="gray-markup">display: flex</code> on the parent to create flex items, the items all move into a row and take only as much space as they need to display their contents.</p>
+      <h3>The flex-grow property</h3>
+      <p>With the <code class="gray-markup">flex-grow</code> property set to a positive integer, flex items can grow along the main axis from their <code class="gray-markup">flex-basis</code>. This will cause the item to stretch and take up any available space on that axis, or a proportion of the available space if other items are allowed to grow too.
+      <br><br>
+      If we gave all of our items in the example above a <code class="gray-markup">flex-grow</code> value of 1 then the available space in the flex container would be equally shared between our items and they would stretch to fill the container on the main.
+      <br><br>
+      The flex-grow property can be used to distribute space in proportion. If we give our first item a <code class="gray-markup">flex-grow</code> value of 2, and the other items a value of 1 each, 2 parts of the available space will be given to the first item (100px out of 200px in the case of the example above), 1 part each the other two (50px each out of the 200px total).</p>
+      <h3>The flex-shrink property</h3>
+      <p>Where the <code class="gray-markup">flex-grow</code> property deals with adding space in the main axis, the <code class="gray-markup">flex-shrink</code> property controls how it is taken away. If we do not have enough space in the container to lay out our items, and <code class="gray-markup">flex-shrink</code> is set to a positive integer, then the item can become smaller than the <code class="gray-markup">flex-basis</code>. As with <code class="gray-markup">flex-grow</code>, different values can be assigned in order to cause one item to shrink faster than others - an item with a higher value set for <code class="gray-markup">flex-shrink</code> will shrink faster than its siblings that have lower values.
+      <br><br>
+      The minimum size of the item will be taken into account while working out the actual amount of shrinkage that will happen, which means that flex-shrink has the potential to appear less consistent than flex-grow in behavior. We'll therefore take a more detailed look at how this algorithm works in the article <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flexible_Box_Layout/Controlling_Ratios_of_Flex_Items_Along_the_Main_Ax">Controlling Ratios of items along the main axis</a>.</p>
+      <div class="note">
+        <p><strong>Note:</strong> These values for <code class="gray-markup">flex-grow</code> and <code class="gray-markup">flex-shrink</code> are proportions. Typically if we had all of our items set to <code class="gray-markup">flex: 1 1 200px</code> and then wanted one item to grow at twice the rate, we would set that item to <code class="gray-markup">flex: 2 1 200px</code>. However you could also use <code class="gray-markup">flex: 10 1 200px</code> and <code class="gray-markup">flex: 20 1 200px</code> if you wanted.</p>
+      </div>
+      <h3>Shorthand values for the flex proerties</h3>
+      <p>You will very rarely see the <code class="gray-markup">flex-grow</code>, <code class="gray-markup">flex-shrink</code>, and <code class="gray-markup">flex-basis</code> properties used individually; instead they are combined into the <code class="gray-markup underline blue">flex</code> shorthand. The <code class="gray-markup">flex</code> shorthand allows you to set the three values in this order - <code class="gray-markup">flex-grow</code>, <code class="gray-markup">flex-shrink</code>, <code class="gray-markup">flex-basis</code>.
+      <br><br>
+      The example bellow you can see it working first value specified is <code class="gray-markup">flex-grow</code>, the second value is <code class="gray-markup">flex-shrink</code> and the last one is the <code class="gray-markup">flex-basis</code> value.</p>
+      
+      <div class="example-box">
+        <div class="border-box">
+          <div class="box" id="flex">
+            <div id="one">One</div>
+            <div id="two">Two</div>
+            <div id="three">Three</div>
+          </div>
+        </div>
+        <h4>CSS</h4>
+        <code class="code-box">.box { <br>
+          <span class="code-margin-1">display : flex ;</span>
+        </span><br>}<br>
+        <code>.one <br></code>
+        <span class="code-margin-1">flex : 2 1 auto ;</span>
+      </span><br>}<br>
+      <code>.two <br></code>
+        <span class="code-margin-1">flex : 1 3 auto ;</span>
+      </span><br>}<br>
+      <code>.three <br></code>
+        <span class="code-margin-1">flex : 3 2 auto ;</span>
+      </span><br>}<br>
+        </code>
+    
+        <h4>HTML5</h4>
+        <code class="code-box"> &lt;div class="box"&gt;<br>
+          <span class="code-margin-1"> &lt;div class="one"&gt;One&lt;/div&gt <br>
+          <span class="code-margin-1"> &lt;div class="two"&gt;Two&lt;/div&gt <br>
+          <span class="code-margin-1"> &lt;div class="three"&gt;Three&lt;/div&gt <br>
+          </span>
+          &lt/div&gt
+        </code>
+      </div>
+      <P>There are also some predefined shorthand values which cover most of the use cases. You will often see these used in tutorials, and in many cases theses are all you will need to use. The predefined values are as follows:</P>
+      <ul>
+        <li class="orange-markup">flex: initial</li>
+        <li class="orange-markup">flex: auto</li>
+        <li class="orange-markup">flex: none</li>
+        <li class="orange-markup">flex:&lt;positive-number&gt;</li>
+      </ul>
+      <p>Setting <code class="gray-markup">flex: initial</code> resets the item to the initial values of Flexbox. This is the same as <code class="gray-markup">flex: 0 1 auto</code>. In this case the value of <code class="gray-markup">flex-shrink</code> is 1, so items can shrink if they need to rather than overflowing. The value of <code class="gray-markup">flex-basis</code> is <code class="gray-markup">auto</code>. Items will either use any size set on the item in the main dimension, or they will get their size from the content size.</p>
+    </section>
+
   </main>
 </body>
 </html
