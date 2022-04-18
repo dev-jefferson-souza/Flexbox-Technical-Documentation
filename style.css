@@ -7,6 +7,7 @@
   /*var-colors*/
   --black: hsl(1, 100%, 0%);
   --blue: hsl(221, 90%, 65%);
+  --ligther-green: hsl(113, 100%, 90%);
   --green: hsl(113, 75%, 75%);
   --gray: hsl(0, 0%, 90%);
   --darker-gray: hsl(0, 0%, 35%);
@@ -26,34 +27,34 @@ section{
   margin: auto;
   padding: 30px 16px 30px 16px;
 }
+.main-section a{
+  color: var(--blue);
+}
+code{
+  font-family: "Roboto mono", monospace;
+  font-size: 14px;
+}
 .green-markup{
   background-color: var(--green);
   border-radius: 2px;
-  font-family: "Roboto mono", monospace;
-  font-size: 14px;
   padding: 0px 3px 0px 3px;
+  width: fit-content;
 }
 .gray-markup{
   background-color: var(--gray);
   border-radius: 2px;
   color: var(--darker-gray);
-  font-family: "Roboto mono", monospace;
-  font-size: 14px;
   padding: 0px 3px 0px 3px;
 }
 .orange-markup{
   background-color: var(--orange);
   border-radius: 2px;
-  font-family: "Roboto mono", monospace;
-  font-size: 14px;
   padding: 0px 3px 0px 3px;
   width: fit-content;
 }
 .yellow-markup{
   background-color: var(--yellow);
   border-radius: 2px;
-  font-family: "Roboto mono", monospace;
-  font-size: 14px;
   padding: 0px 3px 0px 3px;
 }
 .underline{
@@ -78,7 +79,7 @@ h2{
 
 }
 h3{
-  font-size: 32px;
+  font-size: 28px;
   font-weight: 500; 
 }
 li{
@@ -106,14 +107,14 @@ li{
   box-shadow:  4px 4px 10px var(--shadow-1),
                  -4px -4px 10px var(--shadow-2); 
   padding: 18px;
-  overflow: scroll;
-  max-width: 100%;
+  overflow: auto;
+  width: 100%;
 }
 .border-box{
   border: 1px solid var(--black);
   padding: 8px;
   min-width: 280px;
-  max-width: 400px;
+  max-width: 360px;
 }
 .box{
   display: flex;
@@ -126,7 +127,7 @@ li{
   border-radius: 2px;
 }
 .code-margin-1{
-  margin: 0 0 0 45px;
+  margin: 0 0 0 44px;
 }
 h4{
   font-size: 20px;
@@ -139,10 +140,10 @@ h4{
   border-radius: 8px;
   box-shadow:  8px 8px 10px var(--shadow-1),
                -8px -8px 10px var(--shadow-2); 
+  color: var(--darker-gray);
   display: block;
   font-family: "Roboto mono", monospace;
   font-size: 14px;
-  color: var(--darker-gray);
   padding: 24px 48px 24px 48px;
   width: 100%;
   min-height: 100px;
@@ -150,6 +151,53 @@ h4{
   overflow: auto;
 }
 #row-reverse{
-  display: flex;
   flex-direction: row-reverse;
+}
+#row-reverse div{
+  width: 75px;
+}
+#flex-wrap{
+  display: flex;
+  flex-wrap: wrap;
+}
+#flex-wrap div{
+  width: 50%;
+}
+#flex-flow{
+  flex-flow: column nowrap;
+}
+#flex-flow div{
+  width: 170px;
+}
+.note{
+  background-color: var(--ligther-green);
+  border-radius: 8px;
+  box-shadow:  4px 4px 10px var(--shadow-1),
+               -4px -4px 10px var(--shadow-2); 
+  display: flex;
+  margin: 18px 0 36px 0;
+  padding: 24px;
+}
+.note p{
+  align-self: center;
+}
+.note p::before{
+  align-self: center;
+  background-color: var(--white);
+  border-radius: 50%;
+  content: "i";
+  color: var(--black);
+  font-family: 'Roboto mono', monospace;
+  padding: 4px 10px 4px 10px;
+  position: relative;
+  right: 10px;
+}
+#one{
+  flex: 2 1 auto;
+}
+#two{
+  flex: 1 3 auto;
+}
+#three{
+  flex: 3 2 auto;
 }
