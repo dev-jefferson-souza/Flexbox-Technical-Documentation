@@ -89,7 +89,7 @@ User Story #15: My Technical Documentation page should use at least one media qu
       <ul>
         <li>Items display in a row (the <code class="gray-markup)">flex-direction</code> property's default is <code class="yellow-markup">row</code>.</li>
         <li>The items start from the start edge of the main axis.</li>
-        <li>The items do not strecth on the main dimension, but can shrink.</li>
+        <li>The items do not stretch on the main dimension, but can shrink.</li>
         <li>The <code class="gray-markup blue underline">flex-basis</code> property is set to <code class="yellow-markup">auto</code>.</li>
         <li>The <code class="gray-markup blue underline">flex-wrap</code> property is set to <code class="yellow-markup">nowrap</code>.</li>
       </ul>
@@ -247,7 +247,7 @@ User Story #15: My Technical Documentation page should use at least one media qu
       <br><br>
       The minimum size of the item will be taken into account while working out the actual amount of shrinkage that will happen, which means that flex-shrink has the potential to appear less consistent than flex-grow in behavior. We'll therefore take a more detailed look at how this algorithm works in the article <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flexible_Box_Layout/Controlling_Ratios_of_Flex_Items_Along_the_Main_Ax">Controlling Ratios of items along the main axis</a>.</p>
       <div class="note">
-        <p><strong>Note:</strong> These values for <code class="gray-markup">flex-grow</code> and <code class="gray-markup">flex-shrink</code> are proportions. Typically if we had all of our items set to <code class="gray-markup">flex: 1 1 200px</code> and then wanted one item to grow at twice the rate, we would set that item to <code class="gray-markup">flex: 2 1 200px</code>. However you could also use <code class="gray-markup">flex: 10 1 200px</code> and <code class="gray-markup">flex: 20 1 200px</code> if you wanted.</p>
+        <p><strong>Note:</strong> These values for <code class="ligther-green-markup">flex-grow</code> and <code class="ligther-green-markup">flex-shrink</code> are proportions. Typically if we had all of our items set to <code class="ligther-green-markup">flex: 1 1 200px</code> and then wanted one item to grow at twice the rate, we would set that item to <code class="ligther-green-markup">flex: 2 1 200px</code>. However you could also use <code class="ligther-green-markup">flex: 10 1 200px</code> and <code class="ligther-green-markup">flex: 20 1 200px</code> if you wanted.</p>
       </div>
       <h3>Shorthand values for the flex proerties</h3>
       <p>You will very rarely see the <code class="gray-markup">flex-grow</code>, <code class="gray-markup">flex-shrink</code>, and <code class="gray-markup">flex-basis</code> properties used individually; instead they are combined into the <code class="gray-markup underline blue">flex</code> shorthand. The <code class="gray-markup">flex</code> shorthand allows you to set the three values in this order - <code class="gray-markup">flex-grow</code>, <code class="gray-markup">flex-shrink</code>, <code class="gray-markup">flex-basis</code>.
@@ -293,9 +293,64 @@ User Story #15: My Technical Documentation page should use at least one media qu
         <li class="orange-markup">flex: none</li>
         <li class="orange-markup">flex:&lt;positive-number&gt;</li>
       </ul>
-      <p>Setting <code class="gray-markup">flex: initial</code> resets the item to the initial values of Flexbox. This is the same as <code class="gray-markup">flex: 0 1 auto</code>. In this case the value of <code class="gray-markup">flex-shrink</code> is 1, so items can shrink if they need to rather than overflowing. The value of <code class="gray-markup">flex-basis</code> is <code class="gray-markup">auto</code>. Items will either use any size set on the item in the main dimension, or they will get their size from the content size.</p>
+      <p>Setting <code class="gray-markup">flex: initial</code> resets the item to the initial values of Flexbox. This is the same as <code class="gray-markup">flex: 0 1 auto</code>. In this case the value of <code class="gray-markup">flex-shrink</code> is 1, so items can shrink if they need to rather than overflowing. The value of <code class="gray-markup">flex-basis</code> is <code class="gray-markup">auto</code>. Items will either use any size set on the item in the main dimension, or they will get their size from the content size.
+      <br><br>
+      Using <code class="gray-markup">flex: auto</code> is the same as using <code class="gray-markup">flex: 1 1 auto;</code>; everything is as with <code class="gray-markup">flex:initial</code> but in this case the items can grow and fill the container as well as shrink if required.
+      <br><br>
+      Using <code class="gray-markup">flex: none</code> will create fully inflexible items. It is as if you wrote <code class="gray-markup">flex: 0 0 auto</code>. The items cannot grow or shrink but will be laid out using flexbox with a <code class="gray-markup">flex-basis</code> of <code class="gray-markup">auto</code>.
+      <br><br>
+      The shorthand you often see in tutorials is <code class="gray-markup">flex: 1</code> or <code class="gray-markup">flex: 2</code> and so on. This is as if you used <code class="gray-markup">flex: 1 1 0</code> or <code class="gray-markup">flex: 2 1 0</code> and so on, respectively. The items can grow and shrink from a <code class="gray-markup">flex-basis</code> of 0.</p>
     </section>
-
+    <section class="main-section" id="alignment_justification_and_distribution_of_free_space_between_items">
+      <h2>Alignment, justification and distribution of free space between items</h2>
+      <p>A key feature of flexbox is the ability to align and justify items on the main- and cross-axes, and to distribute space between flex items. Note that these properties are to be set on the flex container, not on the items themselves.</p>
+      <h3 class="green-markup">align-items</h3>
+      <p>The <code class="gray-markup underline blue">align-items</code> property will align the items on the cross axis.
+      <br><br>
+      The initial value for this property is <code class="gray-markup">stretch</code> and this is why flex items stretch and this is why flex items stretch to the heigth of the container by default. This might be dictated by the heigth of the tallest item in the container, or by a size set on the flex container itself.
+      <br><br>
+      You could instead set <code class="gray-markup">align-items</code> to <code class="gray-markup">flex-start</code> in order to make the items line up at the start of the flex container, <code class="gray-markup">flex-end</code> to align them to the end, or <code class="gray-markup">center</code> to align them in the center. You can see in the example bellow that I have given the flex container a heigth in order that you can see how the items will be moved around inside the container. I will gave the value of <code class="gray-markup">center</code> to the property <code class="gray-markup">align-items</code>.
+      <br><br>
+      in your local workspace you can see what happens if you set the valu of align-items to:
+      <ul>
+        <li class="orange-markup">stretch</li>
+        <li class="orange-markup">flex-start</li>
+        <li class="orange-markup">flex-end</li>
+        <li class="orange-markup">center</li>
+      </ul><p>
+        <div class="example-box">
+          <div class="border-box">
+            <div class="box" id="align-items">
+              <div>One</div>
+              <div>Two</div>
+              <div>Three
+                <br>has
+                <br>extra
+                <br>text
+              </div>
+            </div>
+          </div>
+          <h4>CSS</h4>
+          <code class="code-box">.box { <br>
+            <span class="code-margin-1"> display: flex; <br>
+          </span>
+            <span class="code-margin-1">align-items: center <br>
+            </span>
+          }</code>
+          <h4>HTML5</h4>
+          <code class="code-box"> &lt;div class="box"&gt;<br>
+            <span class="code-margin-1"> &lt;div&gt;One&lt;/div&gt <br>
+            <span class="code-margin-1"> &lt;div&gt;Two&lt;/div&gt <br>
+            <span class="code-margin-1"> &lt;div&gt;Three<br>
+              <span class="code-margin-2"> &lt;br&gt; has <br></span>
+              <span class="code-margin-2"> &lt;br&gt; extra <br></span>
+              <span class="code-margin-2"> &lt;br&gt; content <br></span>
+            </span>
+            <span class="code-margin-1">&lt;/div&gt; <br></span>
+            &lt;/div&gt;
+          </code>
+        </div>  
+    </section>
   </main>
 </body>
 </html
