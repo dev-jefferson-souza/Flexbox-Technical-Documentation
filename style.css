@@ -40,6 +40,12 @@ code{
   padding: 0px 3px 0px 3px;
   width: fit-content;
 }
+.ligther-green-markup{
+  background-color: var(--ligther-green);
+  border-radius: 2px;
+  padding: 0px 3px 0px 3px;
+  width: fit-content;
+}
 .gray-markup{
   background-color: var(--gray);
   border-radius: 2px;
@@ -88,6 +94,9 @@ li{
 
   font-family: "Roboto mono", monospace;
 }
+ul{
+  margin: 0px 0 24px 0 ;
+}
 
 .images{
   border: 2px solid var(--gray);
@@ -128,6 +137,9 @@ li{
 }
 .code-margin-1{
   margin: 0 0 0 44px;
+}
+.code-margin-2{
+  margin: 0 0 0 88px;
 }
 h4{
   font-size: 20px;
@@ -170,7 +182,7 @@ h4{
   width: 170px;
 }
 .note{
-  background-color: var(--ligther-green);
+  background-color: var(--green);
   border-radius: 8px;
   box-shadow:  4px 4px 10px var(--shadow-1),
                -4px -4px 10px var(--shadow-2); 
@@ -200,4 +212,8 @@ h4{
 }
 #three{
   flex: 3 2 auto;
+}
+#align-items{
+  align-items: center;
+  height: 180px;
 }
