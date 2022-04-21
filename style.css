@@ -116,6 +116,7 @@ ul{
   box-shadow:  4px 4px 10px var(--shadow-1),
                  -4px -4px 10px var(--shadow-2); 
   padding: 18px;
+  margin: 5px 0 38px 0;
   overflow: auto;
   width: 100%;
 }
@@ -216,4 +217,10 @@ h4{
 #align-items{
   align-items: center;
   height: 180px;
+}
+#justify-content{
+  justify-content: space-evenly;
+}
+#justify-content div{
+  max-width: fit-content;
 }
