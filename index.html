@@ -42,16 +42,34 @@ User Story #14: On regular sized devices (laptops, desktops), the element with i
 
 User Story #15: My Technical Documentation page should use at least one media query.-->
 <body>
-  <section id="basic_concepts_of_flexbox">
-    <h1>Basic concepts of flexbox</h1>
-    <p>The Flexible Box Module, usually referred to as <code class="green-markup">flexbox</code>, was deisgned as a one-dimensional layout model, and as a method that could offer space distribution between items in an interface and powerful alignment capabillities. This article gives an outline of the main features of flexbox. <br>
-    When we describe flexbox as being one dimensional we are describing the fact that flexbox deals with layout in one dimension at a time - either as a row or as a column. This can be contrasted with the two-dimensional model of <code class="gray-markup underline">CSS Grid Layout</code>, which controls columns and rows together.</p>
-  </section>
+  
+  <nav id="navbar">
+    <span id="menu-btn" class="action" onclick="actionOpen();">+</span>
+    <h3 class="green-markup">Find content</h3>
+    <div id="nav-grid">
+      <a href="#basic_concepts_of_flexbox">Basic concepts of flexbox</a>
+      <a href="#the_two_axes_of_flexbox">The two axes of flexbox</a>
+      <a href="#start_and_end_lines">Start and end lines</a>
+      <a href="#the_flex_container">The flex container</a>
+      <a href="#changing_flex_direction">Changing flex direction</a>
+      <a href="#multi-line_flex_containers_with_flex-wrap">Multi line flex containers with flex-wrap</a>
+      <a href="#the_flex-flow_shorthand">The flex-flow shorthand</a>
+      <a href="#properties_applied_to_flex_items">Properties applied to flex items</a>
+      <a href="#alignment_justification_and_distribution_of_free_space_between_items">Alignment, justification and distribution of free space between items</a>
+      <a href="#reference">Reference</a>
+    </div>
+  </nav>
+  
   <main id="main-doc">
+    <section class="main-section" id="basic_concepts_of_flexbox">
+      <h1>Basic concepts of flexbox</h1>
+      <p>The Flexible Box Module, usually referred to as <code class="green-markup">flexbox</code>, was deisgned as a one-dimensional layout model, and as a method that could offer space distribution between items in an interface and powerful alignment capabillities. This article gives an outline of the main features of flexbox. <br>
+      When we describe flexbox as being one dimensional we are describing the fact that flexbox deals with layout in one dimension at a time - either as a row or as a column. This can be contrasted with the two-dimensional model of <code class="gray-markup underline">CSS Grid Layout</code>, which controls columns and rows together.</p>
+    </section>
     <section class="main-section" id="the_two_axes_of_flexbox">
       <h2>The two axes of flexbox</h2>
       <p>When working with flexbox you need to think in terms of two axes - the mains axis and the cross axis. The main axis is defined by the <code class="gray-markup underline">flex-direction</code> property, and the cross axis runs perpendicular to it. Everything we do with flexbox refers back to these axes, so it is worth understanding how they work from the outset.</p>
-      <section id="axis">
+      <section>
         <h3>The main axis</h3>
         <p style="margin-bottom: 0px;">The main axis is defined by <code class="gray-markup underline">flex-direction</code>, which has four possible values:</p>
         <ul>
@@ -95,7 +113,7 @@ User Story #15: My Technical Documentation page should use at least one media qu
       </ul>
       <p>The result of this is that your items will all line up in a row, using the size of the content as their size in the main axis. If there are more items than can fit in the container, they will not wrap but will instead overflow. If some items are taller than others, all items will stretch along the cross axis to fill its full size.
         <br> <br>
-      You can see in the live example below how this looks. Try editing the items or adding additional items in order to test the initial behavior of flexbox.  
+      You can see in the example below how this looks.
       </p>
       <div class="example-box">
         <div class="border-box">
@@ -130,7 +148,7 @@ User Story #15: My Technical Documentation page should use at least one media qu
       <br><br>
       If we change <code class="gray-markup">flex-direction</code> to <code class="gray-markup">column</code> the main axis switches and our items now display in a column. Set <code class="gray-markup">column-reverse</code> and the start and end lines are again switched.
      <br><br>
-      The live example below has <code class="gray-markup">flex-direction</code> set to <code class="gray-markup">row-reverse</code>. Try the other values - <code class="gray-markup">row</code>, <code class="gray-markup">column</code> and <code class="gray-markup">column-reverse</code> - to see what happens to the content.</p>
+      The example below has <code class="gray-markup">flex-direction</code> set to <code class="gray-markup">row-reverse</code>. Try the other values - <code class="gray-markup">row</code>, <code class="gray-markup">column</code> and <code class="gray-markup">column-reverse</code> - in your local enviorment to see what happens to the content.</p>
       <div class="example-box">
         <div class="border-box">
           <div class="box" id="row-reverse">
@@ -160,7 +178,7 @@ User Story #15: My Technical Documentation page should use at least one media qu
       <h2>Multi-line flex containers with flex-wrap</h2>
       <p>While flexbox is a one dimensional model, it is possible to cause our flex items to wrap onto multiple lines. In doing so, you should consider each line as a new flex container. Any space distribution will happen across that line, without refrence to the lines on either side.
       <br> <br>
-      To cause wrapping behavior add the property <code class="gray-markup underline blue">flex-wrap</code> with value of <code class="gray-markup">wrap</code>. Now, should your items be too large to all display in one line, they will wrap onto another line. The live sample below contains items that have been given a width, the total width of the items being too wide for the flex container. As <code class="gray-markup">flex-wrap</code> is set to <code class="gray-markup">wrap</code>, the items wrap. Set it to <code class="gray-markup">nowrap</code>, which is also the initial value, and they will instead shrink to fit the container because they are using initial flexbox values that allows items to shrink. Using <code class="gray-markup">nowrap</code> would cause an overflow if the items were not able to shrink, or could not shrink small enough to fit.</p>
+      To cause wrapping behavior add the property <code class="gray-markup underline blue">flex-wrap</code> with value of <code class="gray-markup">wrap</code>. Now, should your items be too large to all display in one line, they will wrap onto another line. The example below contains items that have been given a width, the total width of the items being too wide for the flex container. As <code class="gray-markup">flex-wrap</code> is set to <code class="gray-markup">wrap</code>, the items wrap. Set it to <code class="gray-markup">nowrap</code>, which is also the initial value, and they will instead shrink to fit the container because they are using initial flexbox values that allows items to shrink. Using <code class="gray-markup">nowrap</code> would cause an overflow if the items were not able to shrink, or could not shrink small enough to fit.</p>
       <div class="example-box">
         <div class="border-box">
           <div class="box" id="flex-wrap">
@@ -185,7 +203,7 @@ User Story #15: My Technical Documentation page should use at least one media qu
           &lt/div&gt
         </code>
       </div>
-      <p>Find out more about wrapping flex items in the guide <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flexible_Box_Layout/Mastering_Wrapping_of_Flex_Items">Mastering Wrapping of Flex Items</a>.</p>
+      <p>Find out more about wrapping flex items in the guide <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flexible_Box_Layout/Mastering_Wrapping_of_Flex_Items" target="blank">Mastering Wrapping of Flex Items</a>.</p>
     </section>
     <section class="main-section" id="the_flex-flow_shorthand">
       <h2>The flex-flow shorthand</h2>
@@ -225,7 +243,7 @@ User Story #15: My Technical Documentation page should use at least one media qu
         <li class="orange-markup">flex-shrink</li>
         <li class="orange-markup">flex-basis</li>
       </ul>
-      <p>We will take a brief look at theses properties in this overview, and you can gain a fuller understanding in the guide <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flexible_Box_Layout/Controlling_Ratios_of_Flex_Items_Along_the_Main_Ax">Controlling Ratios of Flex Items on the Main Axis</a>.
+      <p>We will take a brief look at theses properties in this overview, and you can gain a fuller understanding in the guide <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flexible_Box_Layout/Controlling_Ratios_of_Flex_Items_Along_the_Main_Ax" target="blank">Controlling Ratios of Flex Items on the Main Axis</a>.
       <br> <br>
       Before we can make sense of these properties we need to consider the concept of <strong>available space</strong>. What we are foing when we change the value of these flex properties is to change the way that available space is distibuted amongst our items. This concept of available space is also important when we come to look at aligning items.
       <br> <br>
@@ -245,7 +263,7 @@ User Story #15: My Technical Documentation page should use at least one media qu
       <h3>The flex-shrink property</h3>
       <p>Where the <code class="gray-markup">flex-grow</code> property deals with adding space in the main axis, the <code class="gray-markup">flex-shrink</code> property controls how it is taken away. If we do not have enough space in the container to lay out our items, and <code class="gray-markup">flex-shrink</code> is set to a positive integer, then the item can become smaller than the <code class="gray-markup">flex-basis</code>. As with <code class="gray-markup">flex-grow</code>, different values can be assigned in order to cause one item to shrink faster than others - an item with a higher value set for <code class="gray-markup">flex-shrink</code> will shrink faster than its siblings that have lower values.
       <br><br>
-      The minimum size of the item will be taken into account while working out the actual amount of shrinkage that will happen, which means that flex-shrink has the potential to appear less consistent than flex-grow in behavior. We'll therefore take a more detailed look at how this algorithm works in the article <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flexible_Box_Layout/Controlling_Ratios_of_Flex_Items_Along_the_Main_Ax">Controlling Ratios of items along the main axis</a>.</p>
+      The minimum size of the item will be taken into account while working out the actual amount of shrinkage that will happen, which means that flex-shrink has the potential to appear less consistent than flex-grow in behavior. We'll therefore take a more detailed look at how this algorithm works in the article <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flexible_Box_Layout/Controlling_Ratios_of_Flex_Items_Along_the_Main_Ax" target="blank">Controlling Ratios of items along the main axis</a>.</p>
       <div class="note">
         <p><strong>Note:</strong> These values for <code class="ligther-green-markup">flex-grow</code> and <code class="ligther-green-markup">flex-shrink</code> are proportions. Typically if we had all of our items set to <code class="ligther-green-markup">flex: 1 1 200px</code> and then wanted one item to grow at twice the rate, we would set that item to <code class="ligther-green-markup">flex: 2 1 200px</code>. However you could also use <code class="ligther-green-markup">flex: 10 1 200px</code> and <code class="ligther-green-markup">flex: 20 1 200px</code> if you wanted.</p>
       </div>
@@ -381,6 +399,19 @@ User Story #15: My Technical Documentation page should use at least one media qu
           </code>
         </div>
     </section>
+    <section class="main-section" id="reference">
+      <h2>Reference</h2>
+      <p>All the documentation in this page is taken from <a href="https://codepen.io/freeCodeCamp/full/NdrKKL" target="blank">MDN</a>.</p>
+    </section>
+    <footer>
+      <h5>Project made by Jefferson de Souza</h5>
+      <div class="social-media">
+        <a href="https://github.com/bad7k" target="blank"><img class="logo-images" src="./assets/logos/logo-github.png" alt=""></a>
+        <a href="https://www.instagram.com/bad7k_/" target="blank"><img class="logo-images" src="./assets/logos/logo-instagram.png" alt=""></a>
+      </div>
+      <h6>This project was made for <a href="freecodecamp.org">FreeCodeCamp</a>.</h6>
+    </footer>
   </main>
 </body>
+<script src="./script.js"></script>
 </html
