@@ -44,21 +44,23 @@ User Story #15: My Technical Documentation page should use at least one media qu
 <body>
   
   <nav id="navbar">
-    <span id="menu-btn" class="action" onclick="actionOpen();">+</span>
-    <h3 class="green-markup">Find content</h3>
+    <header>
+       <h3 class="green-markup">Find content</h3>
+    </header>  
     <div id="nav-grid">
-      <a href="#basic_concepts_of_flexbox">Basic concepts of flexbox</a>
-      <a href="#the_two_axes_of_flexbox">The two axes of flexbox</a>
-      <a href="#start_and_end_lines">Start and end lines</a>
-      <a href="#the_flex_container">The flex container</a>
-      <a href="#changing_flex_direction">Changing flex direction</a>
-      <a href="#multi-line_flex_containers_with_flex-wrap">Multi line flex containers with flex-wrap</a>
-      <a href="#the_flex-flow_shorthand">The flex-flow shorthand</a>
-      <a href="#properties_applied_to_flex_items">Properties applied to flex items</a>
-      <a href="#alignment_justification_and_distribution_of_free_space_between_items">Alignment, justification and distribution of free space between items</a>
-      <a href="#reference">Reference</a>
+      <a class="nav-link" href="#basic_concepts_of_flexbox">Basic concepts of flexbox</a>
+      <a class="nav-link" href="#the_two_axes_of_flexbox">The two axes of flexbox</a>
+      <a class="nav-link" href="#start_and_end_lines">Start and end lines</a>
+      <a class="nav-link" href="#the_flex_container">The flex container</a>
+      <a class="nav-link" href="#changing_flex_direction">Changing flex direction</a>
+      <a class="nav-link" href="#multi-line_flex_containers_with_flex-wrap">Multi line flex containers with flex-wrap</a>
+      <a class="nav-link" href="#the_flex-flow_shorthand">The flex-flow shorthand</a>
+      <a class="nav-link" href="#properties_applied_to_flex_items">Properties applied to flex items</a>
+      <a class="nav-link" href="#alignment_justification_and_distribution_of_free_space_between_items">Alignment, justification and distribution of free space between items</a>
+      <a class="nav-link" id="nav-last" href="#reference">Reference</a>
     </div>
   </nav>
+  <span id="menu-btn" class="action" onclick="actionOpen();">+</span>
   
   <main id="main-doc">
     <section class="main-section" id="basic_concepts_of_flexbox">
@@ -413,5 +415,5 @@ User Story #15: My Technical Documentation page should use at least one media qu
     </footer>
   </main>
 </body>
-<script src="./script.js"></script>
+<script src="./script.js" src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
 </html
