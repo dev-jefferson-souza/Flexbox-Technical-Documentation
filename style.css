@@ -351,9 +351,12 @@ h6{
     margin: 0 0 0 auto;
   }
 
+ 
+  
   #navbar{
     background-color: var(--white);
     border:  none;
+    border-radius: 0px;
     display: flex;
     align-items: center;
     flex-direction: column;
@@ -380,9 +383,6 @@ h6{
   }
   #menu-btn{
     display: none;
-  }
-  footer{
-    border-radius: 0px;
   }
 }
 @media (min-width:1215px) {
