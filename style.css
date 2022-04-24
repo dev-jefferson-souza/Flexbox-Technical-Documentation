@@ -381,6 +381,9 @@ h6{
   #menu-btn{
     display: none;
   }
+  footer{
+    border-radius: 0px;
+  }
 }
 @media (min-width:1215px) {
   section{
